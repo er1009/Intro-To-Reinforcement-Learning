@@ -1,3 +1,9 @@
+"""
+Contributors:
+    Bar Yacobi: 315471367
+    Eldad Ron: 207021916
+    Salo Elia: 209710243
+"""
 import numpy as np
 
 
