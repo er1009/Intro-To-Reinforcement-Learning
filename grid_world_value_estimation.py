@@ -126,7 +126,7 @@ def estimate_value_function(agent, grid, discount_factor=0.9, iterations=1000,
                     continue
 
                 values = sum(
-                    estimate_state_value(agent, grid, last_iter_v, i, j, direction, stochastic, action_probs)
+                    estimate_state_value(agent, grid, last_iter_v, i, j, direction, stochastic, action_probs, discount_factor)
                     for direction in ['up', 'down', 'left', 'right']
                 )
                 V[i, j] = values / 4  # Average the values from possible actions
@@ -134,7 +134,7 @@ def estimate_value_function(agent, grid, discount_factor=0.9, iterations=1000,
     return V
 
 
-def estimate_state_value(agent, grid, last_iter_v, i, j, direction, stochastic, action_probs):
+def estimate_state_value(agent, grid, last_iter_v, i, j, direction, stochastic, action_probs, discount_factor):
     """Helper function to estimate the value for a state.
 
     Args:
